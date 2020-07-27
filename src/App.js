@@ -18,9 +18,14 @@ function App() {
       <input
         type="search"
         placeholder="search monsters"
+        value={searchField}
         onChange={(e) => setSearchField(e.target.value)}
       />
-      <CardList monsters={monsters} />
+      <CardList
+        monsters={monsters.filter((monster) =>
+          monster.name.toLowerCase().includes(searchField.toLowerCase())
+        )}
+      />
     </div>
   );
 }
