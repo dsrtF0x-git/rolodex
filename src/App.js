@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // import logo from './logo.svg'
 import "./App.css";
 import CardList from "./components/card-list/CardList";
+import SearchBox from "./components/search-box/SearchBox";
 
 function App() {
   useEffect(() => {
@@ -15,11 +16,10 @@ function App() {
 
   return (
     <div className="App">
-      <input
-        type="search"
-        placeholder="search monsters"
-        value={searchField}
-        onChange={(e) => setSearchField(e.target.value)}
+      <SearchBox
+        placeholder="Search monsters"
+        handleChange={(e) => setSearchField(e.target.value)}
+        searchField={searchField}
       />
       <CardList
         monsters={monsters.filter((monster) =>
