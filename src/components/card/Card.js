@@ -1,7 +1,8 @@
-import React from 'react';
-import './Card.css';
+import React from "react";
+import "./Card.css";
 
 function Card({ monster }) {
+  console.log(monster);
   return (
     <div className="card-container">
       <img
